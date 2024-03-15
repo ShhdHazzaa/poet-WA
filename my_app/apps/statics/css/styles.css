@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #fff; /* Change text color to white */
+    background-image: url('C:/Users/huawei/OneDrive/Desktop/Django/my_app/apps/statics/media/backrg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.navbar {
+    background-color: #d1b866fa;
+}
+
+.navbar-brand {
+    color: #ffffff; /* Change text color to white */
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff; /* Change text color to white */
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff; /* Change text color to white */
+    padding: 20px 0;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Change color of the section bar to #c19c07 */
+.section-bar {
+    background-color: #c19c07;
+    color: #ffffff; /* Change text color to white */
+}
