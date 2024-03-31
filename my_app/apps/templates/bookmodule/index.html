@@ -15,6 +15,7 @@
             background-image: url('{% static "media/14.jpg" %}');
             background-size: cover;
             background-repeat: no-repeat;
+            background-color: #bfaa78; /* Background color */
         }
 
         .navbar-nav .nav-link {
@@ -28,7 +29,10 @@
 
 <body>
 
-    <!-- Navigation -->
+    <input type="text" name="example_input">
+    <textarea name="وصف" rows="1" cols="15"></textarea>
+    <button type="submit">Submit</button>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" href="#"> </a>
@@ -49,29 +53,29 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">الرئيسية</a>
-                        
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Main Content -->
+    <!-- المحتوى الرئيسي -->
     <div class="container mt-5">
         <div class="row">
             <div class="col-lg-8 offset-lg-2">
                 <h1 class="text-center">مرحبََا بكم في موقع قوافي</h1>
                 <p class="text-center">أرى الشعر يُحيي الناسَ والمجدَ بالذي تُبقّيـه أرواح له عطراتُ</p>
-                <P class= "text-center">  وما المجدُ لولا الشعرُ إلا معاهدٌ وما الناس إلا أعظم نخرات</p>
+                <p class="text-center">وما المجدُ لولا الشعرُ إلا معاهدٌ وما الناس إلا أعظم نخرات</p>
             </div>
         </div>
     </div>
 
-    <!-- Bootstrap JS and Custom JS -->
+    <!-- Bootstrap JS و Custom JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="{% static 'C:/Users/huawei/OneDrive/Desktop/Django/my_app/apps/statics/js/f.js.' %}"></script>
+
 </body>
 
 </html>
