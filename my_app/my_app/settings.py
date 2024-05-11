@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'apps.bookmodule',
 ]
 
 MIDDLEWARE = [
@@ -121,7 +122,15 @@ USE_TZ = True
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'apps', 'statics'),  # Path to your app's static files
     os.path.join(BASE_DIR, 'static'), 
+    os.path.join(BASE_DIR, 'apps', 'statics', 'css'),  # CSS files
+    os.path.join(BASE_DIR, 'apps', 'statics', 'fonts'),  # Font files
+    os.path.join(BASE_DIR, 'apps', 'statics', 'js'),  # JavaScript files
+    os.path.join(BASE_DIR, 'apps', 'statics', 'media'),  # Media files
+    os.path.join(BASE_DIR, 'apps', 'statics', 'plugins'),  # Plugin files
+    os.path.join(BASE_DIR, 'apps', 'statics', 'poetry'),  # Poetry files
 ]
+
+
 
 STATIC_URL = '/static/'
 
