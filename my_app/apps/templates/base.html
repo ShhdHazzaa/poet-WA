@@ -1,3 +1,4 @@
+<!-- base.html -->
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -18,14 +19,29 @@
             padding: 20px;
             margin-bottom: 20px;
         }
+        /* Add custom styles for the bio/description */
+        .bio {
+            text-align: center;
+            font-family: "Droid Arabic Kufi", Arial, sans-serif;
+            font-size: 1.2em;
+            color: #333; /* Dark text color */
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="page-title">دواوين</div>
+    <div class="bio">
+        وحسب الشِّعر فخرًا أنَّ الإنسانَ يسمع المعنىٰ نثرًا فلا يهزُّ له عِطفًا، ولا يهيج له طربًا، فإذا حُوِّل نظمًا، فرَّح الحزين، وحرَّك الرَّزين، وكرم البخيل، ووقر الإجفيل
+    </div>
 
     <header>
-        <h1>Your Website Header</h1>
-        <!-- Add navigation, logo, or other header content here -->
+        <nav>
+            <ul>
+                <li><a href="{% url 'poet_list' %}">الشعراء</a></li>
+                <li><a href="{% url 'poem_list' %}">قصائد مختارة</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
