@@ -1,6 +1,9 @@
-<h1>Poets</h1>
-<ul>
-{% for poet in poets %}
-    <li><a href="{% url 'poet_detail' poet.id %}">{{ poet.name }}</a></li>
-{% endfor %}
-</ul>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Poet List{% endblock %}
+
+{% block content %}
+<h1>Poet List</h1>
+<!-- Add your poet list content here -->
+{% endblock %}
