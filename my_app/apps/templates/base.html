@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}دواوين{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        /* Add custom styles for the title */
+        .page-title {
+            text-align: center;
+            font-family: "Droid Arabic Kufi", Arial, sans-serif;
+            font-size: 3em; /* Adjust the font size as needed */
+            color: #f5ebe0; /* Lighter color */
+            background-color: #d6ccc2; /* Darker color */
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-title">دواوين</div>
+
+    <header>
+        <h1>Your Website Header</h1>
+        <!-- Add navigation, logo, or other header content here -->
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Website. All rights reserved.</p>
+        <!-- Add footer content, such as links or copyright notice, here -->
+    </footer>
+</body>
+</html>
