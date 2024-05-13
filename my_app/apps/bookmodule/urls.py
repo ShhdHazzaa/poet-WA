@@ -1,10 +1,9 @@
 from django.urls import path
-from . import views
+from .views import PoemListView, PoemDetailView, PoetListView, PoetDetailView
 
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('poem/<int:pk>/', views.poem_detail, name='poem_detail'),
-    path('poet/<int:pk>/', views.poet_detail, name='poet_detail'),
-    path('poet/', views.poet_list, name='poet_list'),
-    path('poem/', views.poem_list, name='poem_list'),
+    path('poems/', PoemListView.as_view(), name='poem_list'),
+    path('poems/<int:pk>/', PoemDetailView.as_view(), name='poem_detail'),
+    path('poets/', PoetListView.as_view(), name='poet_list'),
+    path('poets/<int:pk>/', PoetDetailView.as_view(), name='poet_detail'),
 ]
