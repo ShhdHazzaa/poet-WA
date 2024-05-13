@@ -1,6 +1,3 @@
-from django import forms
-from .models import Poem, Poet
-
 class PoemForm(forms.ModelForm):
     class Meta:
         model = Poem
@@ -14,7 +11,8 @@ class PoemForm(forms.ModelForm):
             attrs={
                 'placeholder': 'ادخل عنوان القصيدة هنا',
                 'class': 'mycssclass',
-                'id': 'myid',
+                'id': 'poem_title_id',
+                'aria-label': 'عنوان القصيدة'
             }
         )
     )
@@ -26,7 +24,8 @@ class PoemForm(forms.ModelForm):
             attrs={
                 'placeholder': 'ادخل محتوى القصيدة هنا',
                 'class': 'mycssclass',
-                'id': 'myid',
+                'id': 'poem_content_id',
+                'aria-label': 'محتوى القصيدة'
             }
         )
     )
@@ -34,29 +33,12 @@ class PoemForm(forms.ModelForm):
     poet = forms.ModelChoiceField(
         queryset=Poet.objects.all(),
         required=True,
-        label='الشاعر'
-    )
-
-
-class PoetForm(forms.ModelForm):
-    class Meta:
-        model = Poet
-        fields = ['name', 'description']
-
-    name = forms.CharField(
-        max_length=100,
-        required=True,
-        label='اسم الشاعر'
-    )
-
-    description = forms.CharField(
-        required=True,
-        label='نبذة عن الشاعر',
-        widget=forms.Textarea(
+        label='الشاعر',
+        widget=forms.Select(
             attrs={
-                'placeholder': 'ادخل نبذة عن الشاعر هنا',
                 'class': 'mycssclass',
-                'id': 'myid',
+                'id': 'poet_id',
+                'aria-label': 'اختر شاعر'
             }
         )
     )
