@@ -1,5 +1,9 @@
 from django.views.generic import ListView, DetailView
 from .models import Poem, Poet
+from django.shortcuts import render
+
+def home(request):
+    return render(request, 'base.html')
 
 class PoemListView(ListView):
     model = Poem
