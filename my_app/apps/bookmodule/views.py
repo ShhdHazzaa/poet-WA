@@ -1,20 +1,18 @@
-from django.shortcuts import render
+from django.views.generic import ListView, DetailView
 from .models import Poem, Poet
 
-def home(request):
-    return render(request, 'base.html')
+class PoemListView(ListView):
+    model = Poem
+    template_name = 'bookmodule/poem_list.html'
 
-def poem_detail(request, pk):
-    poem = Poem.objects.get(pk=pk)
-    return render(request, 'bookmodule/poem_detail.html', {'poem': poem})
+class PoemDetailView(DetailView):
+    model = Poem
+    template_name = 'bookmodule/poem_detail.html'
 
-def poet_detail(request, pk):
-    poet = Poet.objects.get(pk=pk)
-    return render(request, 'bookmodule/poet_detail.html', {'poet': poet})
+class PoetListView(ListView):
+    model = Poet
+    template_name = 'bookmodule/poet_list.html'
 
-def poet_list(request):
-    poets = Poet.objects.all()
-    return render(request, 'bookmodule/poet_list.html', {'poets': poets})
-def poem_list(request):
-    poems = Poem.objects.all()
-    return render(request, 'bookmodule/poem_list.html', {'poems': poems})
+class PoetDetailView(DetailView):
+    model = Poet
+    template_name = 'bookmodule/poet_detail.html'
