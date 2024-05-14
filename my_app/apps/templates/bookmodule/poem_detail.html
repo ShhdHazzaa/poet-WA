@@ -1,3 +1,11 @@
-<h1>{{ poem.title }}</h1>
-<p>{{ poem.content }}</p>
-<p>By: {{ poem.poet }}</p>
+{% extends 'base.html' %}
+
+{% block title %}تفاصيل القصيدة{% endblock %}
+
+{% block content %}
+<div class="poem-detail">
+    <h1>{{ poem.title }}</h1>
+    <p>{{ poem.body }}</p>
+    <p>Author: {{ poem.poet.name }}</p>
+</div>
+{% endblock %}
