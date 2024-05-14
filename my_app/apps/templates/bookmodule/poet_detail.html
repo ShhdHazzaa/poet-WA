@@ -1,16 +1,15 @@
-<!-- poet_detail.html -->
 {% extends 'base.html' %}
 
+{% block title %}تفاصيل الشاعر{% endblock %}
+
 {% block content %}
-    <div>
-        <h2>المتنبي</h2>
-        <p>ليسَ العليلُ الذي حمَّاه في الجسَدِ</p>
-        <p>بلِ العليلُ الذي حمّاه في الكمدِ</p>
-        <p>أقسَمتُ ما قبَّلَ الحُمّى سوى ملِكٍ</p>
-        <p>قبلَ الأميرِ ولا اشتاقَت إلى أحَدِ</p>
-        <p>فلا تلُمها رأت شيئاً فأعجَبَها</p>
-        <p>فعاوَدتكَ ولَو ملَّتكَ لَم تَعُدِ</p>
-        <p>أليسَ من محَنِ الدنيا أبدًا مُعَافَاةٌ</p>
-        <p>ومن عسرِ الأمورِ أبدًا مُيَسَّرَةُ</p>
-    </div>
-{% endblock %}
+<div class="poet-detail">
+    <h1>{{ poet.name }}</h1>
+    <p>{{ poet.bio }}</p>
+    <h2>قصائد هذا الشاعر:</h2>
+    <ul>
+        {% for poem in poet.poems.all %}
+        <li><a href="{% url 'poem_detail' poem.id %}">{{ poem.title }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
