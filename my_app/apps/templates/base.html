@@ -1,7 +1,7 @@
 <!-- base.html -->
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,23 +9,45 @@
     <title>{% block title %}دواوين{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <style>
-        /* Add custom styles for the title */
+        /* Custom styles for the title */
         .page-title {
             text-align: center;
             font-family: "Droid Arabic Kufi", Arial, sans-serif;
-            font-size: 3em; /* Adjust the font size as needed */
-            color: #f5ebe0; /* Lighter color */
-            background-color: #d6ccc2; /* Darker color */
+            font-size: 3em;
+            color: #f5ebe0;
+            background-color: #d6ccc2;
             padding: 20px;
             margin-bottom: 20px;
         }
-        /* Add custom styles for the bio/description */
+        /* Custom styles for the bio/description */
         .bio {
             text-align: center;
             font-family: "Droid Arabic Kufi", Arial, sans-serif;
             font-size: 1.2em;
-            color: #333; /* Dark text color */
+            color: #333;
             margin-bottom: 20px;
+        }
+        /* Navigation and footer styles */
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            background-color: #333;
+            text-align: center;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 15px 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #333;
+            color: white;
         }
     </style>
 </head>
@@ -34,24 +56,22 @@
     <div class="bio">
         وحسب الشِّعر فخرًا أنَّ الإنسانَ يسمع المعنىٰ نثرًا فلا يهزُّ له عِطفًا، ولا يهيج له طربًا، فإذا حُوِّل نظمًا، فرَّح الحزين، وحرَّك الرَّزين، وكرم البخيل، ووقر الإجفيل
     </div>
-
     <header>
         <nav>
             <ul>
+                <li><a href="{% url 'poem_list' %}">الرئيسية</a></li>
                 <li><a href="{% url 'poet_list' %}">الشعراء</a></li>
-                <li><a href="{% url 'poem_list' %}">قصائد مختارة</a></li>
+                <li><a href="{% url 'poem_create' %}">إضافة قصيدة</a></li>
             </ul>
         </nav>
     </header>
-
     <main>
         {% block content %}
         {% endblock %}
     </main>
-
     <footer>
-        <p>&copy; 2024 Your Website. All rights reserved.</p>
-        <!-- Add footer content, such as links or copyright notice, here -->
+        <p>حقوق النشر © 2024. جميع الحقوق محفوظة.</p>
     </footer>
+        <script src="{% static 'js/f.js' %}"></script>
 </body>
 </html>
