@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}تفاصيل الشاعر{% endblock %}
+
+{% block content %}
+<div class="poet-detail">
+    <h1>{{ poet.name }}</h1>
+    <p>{{ poet.bio }}</p>
+    <h2>قصائد هذا الشاعر:</h2>
+    <ul>
+        {% for poem in poet.poems.all %}
+        <li><a href="{% url 'poem_detail' poem.id %}">{{ poem.title }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

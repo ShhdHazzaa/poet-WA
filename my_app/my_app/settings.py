@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.bookmodule',
+    
 ]
 
 MIDDLEWARE = [
@@ -104,7 +105,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
 
@@ -119,20 +120,26 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 # Modify the STATICFILES_DIRS setting to include the correct path to your static files
+
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'apps', 'statics'),  # Path to your app's static files
+    os.path.join(BASE_DIR, 'apps', 'statics'),
     os.path.join(BASE_DIR, 'static'), 
-    os.path.join(BASE_DIR, 'apps', 'statics', 'css'),  # CSS files
-    os.path.join(BASE_DIR, 'apps', 'statics', 'fonts'),  # Font files
-    os.path.join(BASE_DIR, 'apps', 'statics', 'js'),  # JavaScript files
-    os.path.join(BASE_DIR, 'apps', 'statics', 'media'),  # Media files
-    os.path.join(BASE_DIR, 'apps', 'statics', 'plugins'),  # Plugin files
-    os.path.join(BASE_DIR, 'apps', 'statics', 'poetry'),  # Poetry files
+    os.path.join(BASE_DIR, 'apps', 'statics', 'css'),
+    os.path.join(BASE_DIR, 'apps', 'statics', 'fonts'),
+    os.path.join(BASE_DIR, 'apps', 'statics', 'js'),
+    os.path.join(BASE_DIR, 'apps', 'statics', 'media'),
+    os.path.join(BASE_DIR, 'apps', 'statics', 'plugins'),
+    os.path.join(BASE_DIR, 'apps', 'statics', 'poetry'),
 ]
 
 
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+#STATICFILES_DIRS = [
+#    os.path.join(BASE_DIR, 'static'),
+#]
 
 
 

@@ -1,6 +1,0 @@
-<h1>Poets</h1>
-<ul>
-{% for poet in poets %}
-    <li><a href="{% url 'poet_detail' poet.id %}">{{ poet.name }}</a></li>
-{% endfor %}
-</ul>

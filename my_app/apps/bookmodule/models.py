@@ -1,19 +1,21 @@
 from django.db import models
+from django.urls import reverse
 
 class Poet(models.Model):
     name = models.CharField(max_length=100)
     bio = models.TextField()
-    
-    
-    class Meta:
-        app_label = 'bookmodule'
+
     def __str__(self):
         return self.name
 
 class Poem(models.Model):
-    title = models.CharField(max_length=100)
-    content = models.TextField()
-    poet = models.ForeignKey(Poet, on_delete=models.CASCADE)
+    title = models.CharField(max_length=200)
+    body = models.TextField()
+    poet = models.ForeignKey(Poet, on_delete=models.CASCADE, related_name='poems')
+    date_posted = models.DateField(auto_now_add=True)
 
     def __str__(self):
         return self.title
+    
+    def get_absolute_url(self):
+        return reverse('poem_detail', kwargs={'pk': self.pk})

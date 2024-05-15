@@ -1,28 +1,15 @@
 from django import forms
-from .models import Poet, Poem
-
-class PoetForm(forms.ModelForm):
-    class Meta:
-        model = Poet
-        fields = ['name', 'bio']
-        labels = {
-            'name': 'Poet Name',
-            'bio': 'Biography',
-        }
-        widgets = {
-            'bio': forms.Textarea(attrs={'rows': 3}),
-        }
+from .models import Poem, Poet
 
 class PoemForm(forms.ModelForm):
     class Meta:
         model = Poem
-        fields = ['title', 'content', 'poet']
-        labels = {
-            'title': 'Title',
-            'content': 'Content',
-            'poet': 'Poet',
-        }
+        fields = ['title', 'body', 'poet']
         widgets = {
-            'content': forms.Textarea(attrs={'rows': 5}),
+            'title': forms.TextInput(attrs={'placeholder': 'أدخل عنوان القصيدة'}),
+            'body': forms.Textarea(attrs={'placeholder': 'أدخل محتوى القصيدة'}),
         }
- 
+class PoetForm(forms.ModelForm):
+    class Meta:
+        model = Poet
+        fields = ['name', 'bio']

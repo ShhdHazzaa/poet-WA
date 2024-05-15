@@ -1,8 +1,13 @@
-from django.urls import path, re_path
-from . import views
+from django.urls import path
+from .views import (PoemListView, PoemDetailView, PoemCreateView, 
+                    PoemUpdateView, PoemDeleteView, PoetListView, PoetDetailView)
 
 urlpatterns = [
-    path('', views.poet_list, name='poet_list'),
-    path('poet/<int:pk>/', views.poet_detail, name='poet_detail'),
-    path('poem/<int:pk>/', views.poem_detail, name='poem_detail'),
+    path('', PoemListView.as_view(), name='poem_list'),
+    path('poem/<int:pk>/', PoemDetailView.as_view(), name='poem_detail'),
+    path('poem/new/', PoemCreateView.as_view(), name='poem_create'),
+    path('poem/<int:pk>/edit/', PoemUpdateView.as_view(), name='poem_edit'),
+    path('poem/<int:pk>/delete/', PoemDeleteView.as_view(), name='poem_delete'),
+    path('poets/', PoetListView.as_view(), name='poet_list'),
+    path('poet/<int:pk>/', PoetDetailView.as_view(), name='poet_detail'),
 ]

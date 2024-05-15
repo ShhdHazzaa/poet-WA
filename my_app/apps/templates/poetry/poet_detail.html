@@ -1,8 +1,0 @@
-<h1>{{ poet.name }}</h1>
-<p>{{ poet.bio }}</p>
-<h2>Poems by {{ poet.name }}</h2>
-<ul>
-{% for poem in poet.poem_set.all %}
-    <li><a href="{% url 'poem_detail' poem.id %}">{{ poem.title }}</a></li>
-{% endfor %}
-</ul>

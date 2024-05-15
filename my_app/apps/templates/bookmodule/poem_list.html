@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}قائمة القصائد{% endblock %}
+
+{% block content %}
+<h1>قائمة القصائد</h1>
+<ul>
+    {% for poem in poems %}
+    <li><a href="{% url 'poem_detail' poem.id %}">{{ poem.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
