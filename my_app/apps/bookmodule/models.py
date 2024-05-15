@@ -18,4 +18,8 @@ class Poem(models.Model):
         return self.title
     
     def get_absolute_url(self):
+<<<<<<< HEAD
         return reverse('poem_detail', kwargs={'pk': self.pk})
+=======
+        return reverse('poem_detail', kwargs={'pk': self.pk})
+>>>>>>> 7636508951104c9281f4c72fc7634805431a4d6a

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'base.html' %}
 
 {% block title %}تفاصيل القصيدة{% endblock %}
@@ -9,3 +10,16 @@
     <p>Author: {{ poem.poet.name }}</p>
 </div>
 {% endblock %}
+=======
+{% extends 'base.html' %}
+
+{% block title %}تفاصيل القصيدة{% endblock %}
+
+{% block content %}
+<div class="poem-detail">
+    <h1>{{ poem.title }}</h1>
+    <p>{{ poem.body }}</p>
+    <p>Author: {{ poem.poet.name }}</p>
+</div>
+{% endblock %}
+>>>>>>> 7636508951104c9281f4c72fc7634805431a4d6a

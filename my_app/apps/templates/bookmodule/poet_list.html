@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'base.html' %}
 
 {% block title %}قائمة الشعراء{% endblock %}
@@ -10,3 +11,17 @@
     {% endfor %}
 </ul>
 {% endblock %}
+=======
+{% extends 'base.html' %}
+
+{% block title %}قائمة الشعراء{% endblock %}
+
+{% block content %}
+<h1>جميع الشعراء</h1>
+<ul>
+    {% for poet in poets %}
+    <li><a href="{% url 'poet_detail' poet.id %}">{{ poet.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
+>>>>>>> 7636508951104c9281f4c72fc7634805431a4d6a
