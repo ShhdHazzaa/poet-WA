@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {% extends 'base.html' %}
 
 {% block title %}
@@ -13,19 +12,3 @@
         <a href="{% url 'poet_list' %}">Cancel</a>
     </form>
 {% endblock content %}
-=======
-{% extends 'base.html' %}
-
-{% block title %}
-    Confirm Delete
-{% endblock title %}
-
-{% block content %}
-    <h1>Are you sure you want to delete "{{ object.name }}"?</h1>
-    <form method="post">
-        {% csrf_token %}
-        <button type="submit">Yes, delete it!</button>
-        <a href="{% url 'poet_list' %}">Cancel</a>
-    </form>
-{% endblock content %}
->>>>>>> 7636508951104c9281f4c72fc7634805431a4d6a
