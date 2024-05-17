@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {% extends 'base.html' %}
 
 {% load i18n %}
@@ -17,26 +16,3 @@
         </form>
     </div>
 {% endblock content %}
-
-=======
-{% extends 'base.html' %}
-
-{% load i18n %}
-
-{% block title %}
-    {% if object %}{% trans 'تعديل الشاعر' %}{% else %}{% trans 'إضافة شاعر جديد' %}{% endif %}
-{% endblock title %}
-
-{% block content %}
-    <div style="direction: rtl; text-align: right;">
-        <h1>{% if object %}{% trans 'تعديل بيانات الشاعر' %}: {{ object.name }}{% else %}{% trans 'إضافة شاعر جديد' %}{% endif %}</h1>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">{% trans 'إرسال' %}</button>
-        </form>
-    </div>
-{% endblock content %}
-
-
->>>>>>> 7636508951104c9281f4c72fc7634805431a4d6a
